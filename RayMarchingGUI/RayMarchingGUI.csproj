@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{57EB4F42-7102-4936-ACFF-151F973B72C4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>RayMarchingGUI</RootNamespace>
+    <AssemblyName>RayMarchingGUI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>_64pxSceneIcon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RayMarching, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\util\RayMarching.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Vectors, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\util\Vectors.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Renderer\RenderSettings.cs" />
+    <Compile Include="SceneDialog.Edit\RenderSettingsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SceneDialog.Edit\RenderSettingsDialog.Designer.cs">
+      <DependentUpon>RenderSettingsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SceneDialog.Edit\CapsuleDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SceneDialog.Edit\CapsuleDialog.Designer.cs">
+      <DependentUpon>CapsuleDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel\ColorPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panel\ColorPanel.Designer.cs">
+      <DependentUpon>ColorPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SceneDialog.Edit\PlaneDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SceneDialog.Edit\PlaneDialog.Designer.cs">
+      <DependentUpon>PlaneDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SceneDialog.Edit\RectangleDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SceneDialog.Edit\RectangleDialog.Designer.cs">
+      <DependentUpon>RectangleDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SceneDialog.Edit\LightSourceDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SceneDialog.Edit\LightSourceDialog.Designer.cs">
+      <DependentUpon>LightSourceDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel\ProgressPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panel\ProgressPanel.Designer.cs">
+      <DependentUpon>ProgressPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SceneDialog.Edit\PropertiesDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SceneDialog.Edit\PropertiesDialog.Designer.cs">
+      <DependentUpon>PropertiesDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Renderer\RenderDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Renderer\RenderDialog.Designer.cs">
+      <DependentUpon>RenderDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SceneDialog\PanelExtensions.cs" />
+    <Compile Include="SceneDialog\SceneDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SceneDialog\SceneDialog.Designer.cs">
+      <DependentUpon>SceneDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SceneDialog\TextAndImageColumn.cs" />
+    <Compile Include="Panel\TextBoxPanel.cs" />
+    <Compile Include="Panel\TextBoxPanel.designer.cs">
+      <DependentUpon>TextBoxPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SceneDialog\ViewHelper.cs" />
+    <Compile Include="SceneDialog.Edit\SphereDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SceneDialog.Edit\SphereDialog.Designer.cs">
+      <DependentUpon>SphereDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SceneDialog.Edit\TorusDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SceneDialog.Edit\TorusDialog.Designer.cs">
+      <DependentUpon>TorusDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SceneDialog.Edit\ShapeTypeDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SceneDialog.Edit\ShapeTypeDialog.Designer.cs">
+      <DependentUpon>ShapeTypeDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel\ShapeTypePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panel\ShapeTypePanel.Designer.cs">
+      <DependentUpon>ShapeTypePanel.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Panel\ColorPanel.resx">
+      <DependentUpon>ColorPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SceneDialog.Edit\RenderSettingsDialog.resx">
+      <DependentUpon>RenderSettingsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SceneDialog.Edit\CapsuleDialog.resx">
+      <DependentUpon>CapsuleDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SceneDialog.Edit\PlaneDialog.resx">
+      <DependentUpon>PlaneDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SceneDialog.Edit\RectangleDialog.resx">
+      <DependentUpon>RectangleDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SceneDialog.Edit\LightSourceDialog.resx">
+      <DependentUpon>LightSourceDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel\ProgressPanel.resx">
+      <DependentUpon>ProgressPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SceneDialog.Edit\PropertiesDialog.resx">
+      <DependentUpon>PropertiesDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Renderer\RenderDialog.resx">
+      <DependentUpon>RenderDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SceneDialog\SceneDialog.resx">
+      <DependentUpon>SceneDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel\TextBoxPanel.resx">
+      <DependentUpon>TextBoxPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SceneDialog.Edit\SphereDialog.resx">
+      <DependentUpon>SphereDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SceneDialog.Edit\TorusDialog.resx">
+      <DependentUpon>TorusDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SceneDialog.Edit\ShapeTypeDialog.resx">
+      <DependentUpon>ShapeTypeDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel\ShapeTypePanel.resx">
+      <DependentUpon>ShapeTypePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\16px\_16pxAdd.png" />
+    <Content Include="Resources\16px\_16pxCopy.png" />
+    <Content Include="Resources\16px\_16pxEdit.png" />
+    <Content Include="Resources\16px\_16pxOpenFile.png" />
+    <Content Include="Resources\16px\_16pxRender.png" />
+    <Content Include="Resources\16px\_16pxSaveAs.png" />
+    <Content Include="Resources\16px\_16pxTrash.png" />
+    <Content Include="Resources\22px\_22pxCapsule.png" />
+    <Content Include="Resources\22px\_22pxLightSource.png" />
+    <Content Include="Resources\22px\_22pxPlane.png" />
+    <Content Include="Resources\22px\_22pxRectangle.png" />
+    <Content Include="Resources\22px\_22pxSphere.png" />
+    <Content Include="Resources\22px\_22pxTorus.png" />
+    <Content Include="Resources\64pxIcon\_64pxCapsuleCapsule.ico" />
+    <Content Include="Resources\64pxIcon\_64pxLightSourceIcon.ico" />
+    <Content Include="Resources\64pxIcon\_64pxPlaneIcon.ico" />
+    <Content Include="Resources\64pxIcon\_64pxRectangleIcon.ico" />
+    <Content Include="Resources\64pxIcon\_64pxSceneIcon.ico" />
+    <Content Include="Resources\64pxIcon\_64pxSphereIcon.ico" />
+    <Content Include="Resources\64pxIcon\_64pxTorusIcon.ico" />
+    <Content Include="Resources\64px\_64pxCamera.png" />
+    <Content Include="Resources\64px\_64pxCapsule.png" />
+    <Content Include="Resources\64px\_64pxLightSource.png" />
+    <Content Include="Resources\64px\_64pxPlane.png" />
+    <Content Include="Resources\64px\_64pxRectangle.png" />
+    <Content Include="Resources\64px\_64pxScene.png" />
+    <Content Include="Resources\64px\_64pxSphere.png" />
+    <Content Include="Resources\64px\_64pxTorus.png" />
+    <Content Include="_64pxSceneIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ComputerGraphicsExtensions\ComputerGraphicsExtensions.csproj">
+      <Project>{f3a27d71-64f6-435a-a761-17cf01a8c5e1}</Project>
+      <Name>ComputerGraphicsExtensions</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
